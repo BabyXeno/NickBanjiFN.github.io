@@ -1,85 +1,130 @@
 {
   "greetings": ["hello", "hi", "hey", "greetings"],
   "greeting_responses": [
-    "Hey there, fellow player! How can I assist your Fortnite journey?",
-    "Greetings! NickBotFN at your service. What's on your mind?",
-    "Hi! Ready to help you conquer the island. Ask away!"
+    "Hey there, fellow looper! Welcome to NickBanjiFN. How can I help you navigate the island or find your squad?",
+    "Greetings! NickBotFN at your service. Ready to assist with all things Fortnite. What's on your mind?",
+    "Hi! Ready to help you conquer the storm and find your Victory Royale. Ask away!"
   ],
   "farewells": ["bye", "goodbye", "later", "see ya", "cya"],
   "farewell_responses": [
-    "Farewell! May your Victory Royales be plentiful!",
-    "Catch you later, loopers! Good luck out there!",
-    "Stay safe in the storm! NickBotFN signing off for now."
+    "Farewell! May your Victory Royales be plentiful and your builds be mighty!",
+    "Catch you later, loopers! Good luck out there, and I hope to see you on stream!",
+    "Stay safe in the storm! NickBotFN signing off for now. Don't forget to squad up!"
   ],
   "keywords": {
+    "homepage": {
+      "trigger_words": ["homepage", "home page", "start", "welcome"],
+      "responses": [
+        "Welcome to NickBanjiFN – your ultimate Fortnite hub! From tutorials to streams, it's all here. Check out the 'Learn the Game,' 'Join the Community,' or 'Watch My Streams' buttons!",
+        "The homepage is designed to get you straight into the action! You'll find my latest stream preview and quick links to everything Fortnite."
+      ]
+    },
+    "new_players": {
+      "trigger_words": [
+        "new player",
+        "beginner",
+        "start",
+        "how to play",
+        "tutorial"
+      ],
+      "responses": [
+        "Welcome to Fortnite! Not sure where to start? Check out the 'New Players' section for beginner guides on installing, building, and survival tips to get you started.",
+        "Our 'New Players' section is perfect for newcomers! You'll find guides like 'How to Start in Fortnite' and 'Building Basics' to help you master the game.",
+        "Getting into Fortnite? Head to the 'New Players' section! We've got interactive quizzes, essential guides like 'Best Loadouts and Weapons,' and more to boost your confidence."
+      ]
+    },
     "building": {
       "trigger_words": ["build", "building", "edit", "90s"],
       "responses": [
-        "Building is key! Check out the 'Building Basics' guide in the New Players section for a detailed breakdown.",
-        "Need help with builds? Practice makes perfect! My guide covers everything from basic walls to advanced edits.",
-        "Mastering your builds will give you a huge advantage! You can find tips on 90s and ramp rushes on the New Players page."
+        "Building is key! Our 'Building Basics' guide in the 'New Players' section offers step-by-step tutorials to master builds, from fundamentals to advanced techniques.",
+        "Need to master your edits and 90s? The 'Building Basics' guide is your best friend! It's designed to help you improve rapidly.",
+        "Building is a core part of Fortnite! Find detailed tutorials and tips on mastering this essential skill in the 'New Players' section."
       ]
     },
     "weapons": {
       "trigger_words": ["weapon", "guns", "loadout", "best gun"],
       "responses": [
-        "Looking for the best weapons? The 'Best Loadouts & Weapons' guide in the New Players section has you covered!",
-        "The meta changes, but a good loadout is crucial. My weapon guide can help you pick the right gear.",
-        "Assault rifles, shotguns, SMGs... so many choices! Check my loadout guide for recommendations based on playstyle."
+        "Looking for the best weapons and optimal loadouts? The 'Best Loadouts and Weapons' guide in the 'New Players' section has detailed recommendations for different playstyles!",
+        "A strong loadout makes all the difference! My weapon guide on the 'New Players' page will help you choose the right gear for Victory Royales.",
+        "From assault rifles to shotguns, discover the best picks! Check the 'Best Loadouts and Weapons' guide for in-depth insights."
       ]
     },
-    "zero_build": {
-      "trigger_words": ["zero build", "no build", "zero building"],
+    "survival_tips": {
+      "trigger_words": ["survival", "survive", "early game", "stay alive"],
       "responses": [
-        "Zero Build mode is a blast! For strategies on positioning and mobility without building, see my 'Pro Tips: Mastering Zero Build Mode' blog post.",
-        "No builds, no problem! It's all about gun skill and smart rotations in Zero Build. My blog has some great tips.",
-        "Zero Build is a different beast. Focus on cover and mobility! Check out the Comm-Log for specific strategies."
+        "Struggling in the early game? Our 'Survival Tips' guide in the 'New Players' section provides strategies to survive those crucial initial stages and beyond!",
+        "Don't get eliminated early! The 'Survival Tips' guide has all the strategies you need to stay in the game longer and outwit your opponents."
+      ]
+    },
+    "free_to_play": {
+      "trigger_words": ["free to play", "free", "cost", "battle pass", "v-bucks", "vbucks"],
+      "responses": [
+        "Fortnite is free-to-play! Our 'Free-to-Play Overview' guide explains how it works, including the Battle Pass and V-Bucks, so you can get the most out of the game.",
+        "Wondering about V-Bucks and the Battle Pass? The 'Free-to-Play Overview' on the 'New Players' page has all the details you need to understand Fortnite's mechanics."
+      ]
+    },
+    "community": {
+      "trigger_words": [
+        "community",
+        "fans",
+        "followers",
+        "squad",
+        "connect",
+        "friends"
+      ],
+      "responses": [
+        "Join the NickBanjiFN squad! Connect with fans from around the world, share your Fortnite stories, and catch exclusive content just for you in the 'For Fans & Followers' section!",
+        "The NickBanjiFN community is always looking for new players to join the fun! Whether you're looking for advice, new friends to squad up with, or just want to chat, our Discord is the place to be! Find the link in 'Join the Community'!",
+        "Our community is awesome! Check out the 'For Fans & Followers' section for fan art, community spotlights, and all my social media links to stay connected!"
+      ]
+    },
+    "discord": {
+      "trigger_words": ["discord", "chat", "squad up", "team up"],
+      "responses": [
+        "Join our Discord community! It's the best place to find teammates for matchmaking, live chat during streams, and participate in exclusive events. You'll find the invite in the 'Join the Community' section!",
+        "Looking to squad up or just chat about Fortnite? Our Discord server is super active! The 'Join the Community' section has the direct link to join the NickBanjiFN family."
       ]
     },
     "streams": {
       "trigger_words": ["stream", "live", "watch", "twitch", "youtube"],
       "responses": [
-        "You can catch my live streams on Twitch! The link is prominently featured on the homepage and in the 'For Fans & Followers' section.",
-        "Want to watch me play? I stream regularly on Twitch and sometimes on YouTube! Check the 'Follow My Cyber-Journey!' section.",
-        "Tune in to my next stream! Details and links are available in the 'Upcoming Streams & Events' section and social links."
+        "You can catch my live streams on Twitch and watch highlights on YouTube! Find the 'Watch My Streams' button on the homepage, or check the 'Follow Me' section for direct links and embedded previews.",
+        "Want to tune into my next broadcast? Keep an eye on the 'Upcoming Events & Streams' section for a schedule and countdown, or click 'Watch My Streams' from the homepage!"
       ]
     },
-    "discord": {
-      "trigger_words": ["discord", "community", "chat", "friends", "squad up"],
+    "fan_content": {
+      "trigger_words": ["fan art", "submissions", "shoutouts", "community spotlight"],
       "responses": [
-        "Join our Discord community! It's the best place to chat with other fans, find teammates, and get advice. The 'Join the Community' section has the invite link.",
-        "Looking for people to play with? Our Discord server is super active! Find the 'Join Discord' button in the Community section.",
-        "The NickBanjiFN Discord is where all the action is! Get advice, join events, and connect with fellow loopers."
+        "We love our community's creativity! Check out the 'Fan Art / Fan Submissions' and 'Community Spotlights' sections within 'For Fans & Followers' to see amazing content from our squad!",
+        "Got some cool fan art or a great Fortnite moment? We might feature it! Head over to the 'For Fans & Followers' section to see what our community has been up to."
       ]
     },
     "blog": {
-      "trigger_words": ["blog", "news", "updates", "patch notes"],
+      "trigger_words": ["blog", "news", "updates", "patch notes", "pro tips", "stories"],
       "responses": [
-        "Stay updated with the 'Comm-Log' (our blog)! I post about patch notes, pro tips, and community stories there.",
-        "For the latest Fortnite news and insightful articles, head over to the 'Blog' section. It's updated frequently!",
-        "Want to know what's new in Fortnite? My blog covers all the important updates and tips to keep you ahead."
+        "Stay in the loop with the 'Blog' section! We post regular 'Fortnite Patch Notes and Updates,' 'Tips from the Pros,' and heartwarming 'Fan Spotlights & Stories.'",
+        "For all the latest Fortnite news, my personal advice, and amazing stories from our community, make sure to visit the 'Blog' section frequently!"
+      ]
+    },
+    "bed_wars": {
+      "trigger_words": ["bed wars", "bedwars", "new map", "NBFN"],
+      "responses": [
+        "Exciting news! We have officially confirmed the development of our new Bed Wars map: NBFN | BED WARS! Stay tuned for updates on its release and how to play it on our community channels and blog!",
+        "Yes, our new Fortnite Bed Wars map, NBFN | BED WARS, is in development! Get ready for a fresh, fun experience. We'll announce more details soon!"
       ]
     },
     "support": {
       "trigger_words": ["support", "help me", "problem", "contact"],
       "responses": [
-        "If you need more specific help, consider joining our Discord and asking in the dedicated support channels. The community is very helpful!",
-        "For game-related issues, checking official Fortnite support pages is often best. For content-related questions, our Discord is a great place to ask."
-      ]
-    },
-    "vbucks": {
-      "trigger_words": ["v-bucks", "vbucks", "free to play", "money"],
-      "responses": [
-        "Fortnite is free-to-play, and you can earn V-Bucks through the Battle Pass! Learn more in the 'Free-to-Play Overview' guide.",
-        "V-Bucks are Fortnite's in-game currency. My guide on the 'New Players' page explains how they work and how to get them.",
-        "Yes, Fortnite is free! The 'Free-to-Play Overview' covers how the Battle Pass works and how you can earn V-Bucks just by playing."
+        "If you need more specific help or have a question not covered here, I highly recommend joining our Discord and asking in the dedicated support channels – our community is very helpful!",
+        "For general Fortnite game-related issues, official Epic Games support is often the best resource. For content or community-related questions, our Discord is a great place to get assistance!"
       ]
     }
   },
   "default_response": [
-    "I'm still learning the ropes, but I'll do my best to help! Can you rephrase your question?",
-    "Hmm, I'm not sure I understand. Try asking about a specific topic like 'building' or 'streams'.",
-    "My circuits are buzzing, but I need more data! What exactly would you like to know about Fortnite?",
-    "That's an interesting query! For now, I can mostly assist with topics covered in the guides and community sections. Feel free to ask about 'weapons', 'Discord', or 'blog'!"
+    "I'm still learning the ropes of this vast Fortnite island, but I'll do my best to help! Can you rephrase your question, perhaps mentioning 'new players,' 'Discord,' 'streams,' or 'Bed Wars'?",
+    "Hmm, I'm not sure I understand that command yet. Try asking about a specific topic like 'building,' 'weapons,' 'community,' or 'blog' for more tailored assistance.",
+    "My circuits are buzzing, but I need more data! What exactly would you like to know about NickBanjiFN or Fortnite?",
+    "That's an interesting query! For now, I can mostly assist with topics covered in the guides, community sections, and news updates. Feel free to ask about 'tutorials,' 'streams,' 'Discord,' or even our 'Bed Wars' map!"
   ]
 }
