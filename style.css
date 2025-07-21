@@ -1210,3 +1210,180 @@ body {
         font-size: 1.3rem;
     }
 }
+/* ... (existing CSS) ... */
+
+/* Chatbot Specific Styles */
+.chatbot-container {
+    position: fixed;
+    bottom: var(--spacing-sm);
+    right: var(--spacing-sm);
+    width: 350px;
+    height: 450px; /* Default expanded height */
+    background: rgba(10, 10, 15, 0.95);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--color-accent-cyan);
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.7), 0 0 20px var(--color-accent-cyan);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 1000; /* Ensure it's on top */
+    transition: all 0.3s ease-in-out;
+}
+
+.chatbot-container.minimized {
+    height: 50px; /* Minimized height */
+    width: 350px;
+    border-radius: var(--border-radius-md); /* Keep header rounded */
+    border-bottom: none;
+}
+
+.chatbot-header {
+    background: linear-gradient(90deg, var(--color-accent-blue), var(--color-accent-cyan));
+    padding: var(--spacing-xs) var(--spacing-sm);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color-bg-dark);
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer; /* To make the header toggle functionality intuitive */
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.chatbot-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-shadow: 0 0 5px rgba(255,255,255,0.7);
+}
+
+.chatbot-toggle-btn {
+    background: none;
+    border: none;
+    color: var(--color-bg-dark);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.chatbot-toggle-btn:hover {
+    transform: scale(1.1);
+}
+
+.chatbot-body {
+    flex-grow: 1;
+    padding: var(--spacing-xs);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* Custom scrollbar for cyberpunk feel */
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: var(--color-accent-purple) transparent; /* Firefox */
+}
+
+.chatbot-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chatbot-body::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.chatbot-body::-webkit-scrollbar-thumb {
+    background-color: var(--color-accent-purple);
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.chatbot-container.minimized .chatbot-body,
+.chatbot-container.minimized .chatbot-footer {
+    display: none; /* Hide body and footer when minimized */
+}
+
+.chatbot-message {
+    max-width: 80%;
+    padding: 10px 15px;
+    border-radius: var(--border-radius-sm);
+    line-height: 1.4;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.user-message {
+    align-self: flex-end;
+    background: var(--color-accent-blue);
+    color: var(--color-bg-dark);
+    border-bottom-right-radius: 2px;
+}
+
+.bot-message {
+    align-self: flex-start;
+    background: var(--color-glass-light);
+    color: var(--color-text-light);
+    border: 1px solid var(--color-glass-border);
+    border-bottom-left-radius: 2px;
+}
+
+.chatbot-footer {
+    display: flex;
+    padding: var(--spacing-xs);
+    border-top: 1px solid var(--color-glass-border);
+}
+
+.chatbot-footer input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid var(--color-accent-purple);
+    border-radius: var(--border-radius-sm);
+    background: var(--color-bg-dark);
+    color: var(--color-text-light);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.chatbot-footer input:focus {
+    border-color: var(--color-accent-cyan);
+    box-shadow: 0 0 8px var(--color-accent-cyan);
+}
+
+.chatbot-footer button {
+    background: var(--color-accent-purple);
+    color: var(--color-text-light);
+    border: none;
+    padding: 10px 15px;
+    margin-left: 10px;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.chatbot-footer button:hover {
+    background: var(--color-accent-cyan);
+    color: var(--color-bg-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px var(--color-accent-cyan);
+}
+
+/* Floating button to open chatbot */
+.open-chatbot-btn {
+    position: fixed;
+    bottom: var(--spacing-sm);
+    right: var(--spacing-sm);
+    z-index: 999;
+    padding: 15px 25px;
+    font-size: 1.1rem;
+    border-radius: 50px; /* Circular for visibility */
+    display: none; /* Hidden by default, shown when chatbot is minimized */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5), 0 0 15px var(--color-accent-cyan);
+}
+
+.chatbot-container.minimized + .open-chatbot-btn {
+    display: flex; /* Show the open button when chatbot is minimized */
+}

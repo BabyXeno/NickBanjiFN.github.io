@@ -1,0 +1,85 @@
+{
+  "greetings": ["hello", "hi", "hey", "greetings"],
+  "greeting_responses": [
+    "Hey there, fellow player! How can I assist your Fortnite journey?",
+    "Greetings! NickBotFN at your service. What's on your mind?",
+    "Hi! Ready to help you conquer the island. Ask away!"
+  ],
+  "farewells": ["bye", "goodbye", "later", "see ya", "cya"],
+  "farewell_responses": [
+    "Farewell! May your Victory Royales be plentiful!",
+    "Catch you later, loopers! Good luck out there!",
+    "Stay safe in the storm! NickBotFN signing off for now."
+  ],
+  "keywords": {
+    "building": {
+      "trigger_words": ["build", "building", "edit", "90s"],
+      "responses": [
+        "Building is key! Check out the 'Building Basics' guide in the New Players section for a detailed breakdown.",
+        "Need help with builds? Practice makes perfect! My guide covers everything from basic walls to advanced edits.",
+        "Mastering your builds will give you a huge advantage! You can find tips on 90s and ramp rushes on the New Players page."
+      ]
+    },
+    "weapons": {
+      "trigger_words": ["weapon", "guns", "loadout", "best gun"],
+      "responses": [
+        "Looking for the best weapons? The 'Best Loadouts & Weapons' guide in the New Players section has you covered!",
+        "The meta changes, but a good loadout is crucial. My weapon guide can help you pick the right gear.",
+        "Assault rifles, shotguns, SMGs... so many choices! Check my loadout guide for recommendations based on playstyle."
+      ]
+    },
+    "zero_build": {
+      "trigger_words": ["zero build", "no build", "zero building"],
+      "responses": [
+        "Zero Build mode is a blast! For strategies on positioning and mobility without building, see my 'Pro Tips: Mastering Zero Build Mode' blog post.",
+        "No builds, no problem! It's all about gun skill and smart rotations in Zero Build. My blog has some great tips.",
+        "Zero Build is a different beast. Focus on cover and mobility! Check out the Comm-Log for specific strategies."
+      ]
+    },
+    "streams": {
+      "trigger_words": ["stream", "live", "watch", "twitch", "youtube"],
+      "responses": [
+        "You can catch my live streams on Twitch! The link is prominently featured on the homepage and in the 'For Fans & Followers' section.",
+        "Want to watch me play? I stream regularly on Twitch and sometimes on YouTube! Check the 'Follow My Cyber-Journey!' section.",
+        "Tune in to my next stream! Details and links are available in the 'Upcoming Streams & Events' section and social links."
+      ]
+    },
+    "discord": {
+      "trigger_words": ["discord", "community", "chat", "friends", "squad up"],
+      "responses": [
+        "Join our Discord community! It's the best place to chat with other fans, find teammates, and get advice. The 'Join the Community' section has the invite link.",
+        "Looking for people to play with? Our Discord server is super active! Find the 'Join Discord' button in the Community section.",
+        "The NickBanjiFN Discord is where all the action is! Get advice, join events, and connect with fellow loopers."
+      ]
+    },
+    "blog": {
+      "trigger_words": ["blog", "news", "updates", "patch notes"],
+      "responses": [
+        "Stay updated with the 'Comm-Log' (our blog)! I post about patch notes, pro tips, and community stories there.",
+        "For the latest Fortnite news and insightful articles, head over to the 'Blog' section. It's updated frequently!",
+        "Want to know what's new in Fortnite? My blog covers all the important updates and tips to keep you ahead."
+      ]
+    },
+    "support": {
+      "trigger_words": ["support", "help me", "problem", "contact"],
+      "responses": [
+        "If you need more specific help, consider joining our Discord and asking in the dedicated support channels. The community is very helpful!",
+        "For game-related issues, checking official Fortnite support pages is often best. For content-related questions, our Discord is a great place to ask."
+      ]
+    },
+    "vbucks": {
+      "trigger_words": ["v-bucks", "vbucks", "free to play", "money"],
+      "responses": [
+        "Fortnite is free-to-play, and you can earn V-Bucks through the Battle Pass! Learn more in the 'Free-to-Play Overview' guide.",
+        "V-Bucks are Fortnite's in-game currency. My guide on the 'New Players' page explains how they work and how to get them.",
+        "Yes, Fortnite is free! The 'Free-to-Play Overview' covers how the Battle Pass works and how you can earn V-Bucks just by playing."
+      ]
+    }
+  },
+  "default_response": [
+    "I'm still learning the ropes, but I'll do my best to help! Can you rephrase your question?",
+    "Hmm, I'm not sure I understand. Try asking about a specific topic like 'building' or 'streams'.",
+    "My circuits are buzzing, but I need more data! What exactly would you like to know about Fortnite?",
+    "That's an interesting query! For now, I can mostly assist with topics covered in the guides and community sections. Feel free to ask about 'weapons', 'Discord', or 'blog'!"
+  ]
+}
