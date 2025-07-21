@@ -1,8 +1,8 @@
 {
   "greetings": ["hello", "hi", "hey", "greetings"],
   "greeting_responses": [
-    "Hey there, fellow looper! Welcome to NickBanjiFN. How can I help you navigate the island or find your squad?",
-    "Greetings! NickBotFN at your service. Ready to assist with all things Fortnite. What's on your mind?",
+    "Hey there, fellow looper! Welcome to NickBanjiFN – your ultimate Fortnite hub. How can I help you navigate the island or find your squad?",
+    "Greetings! NickBotFN at your service, ready to assist with all things Fortnite. What's on your mind?",
     "Hi! Ready to help you conquer the storm and find your Victory Royale. Ask away!"
   ],
   "farewells": ["bye", "goodbye", "later", "see ya", "cya"],
@@ -59,8 +59,9 @@
     "free_to_play": {
       "trigger_words": ["free to play", "free", "cost", "battle pass", "v-bucks", "vbucks"],
       "responses": [
-        "Fortnite is free-to-play! Our 'Free-to-Play Overview' guide explains how it works, including the Battle Pass and V-Bucks, so you can get the most out of the game.",
-        "Wondering about V-Bucks and the Battle Pass? The 'Free-to-Play Overview' on the 'New Players' page has all the details you need to understand Fortnite's mechanics."
+        "Fortnite is free-to-play, and you can earn V-Bucks through the Battle Pass! Learn more in the 'Free-to-Play Overview' guide.",
+        "V-Bucks are Fortnite's in-game currency. My guide on the 'New Players' page explains how they work and how to get them.",
+        "Yes, Fortnite is free! The 'Free-to-Play Overview' covers how the Battle Pass works and how you can earn V-Bucks just by playing."
       ]
     },
     "community": {
@@ -107,10 +108,11 @@
       ]
     },
     "bed_wars": {
-      "trigger_words": ["bed wars", "bedwars", "new map", "NBFN"],
+      "trigger_words": ["bed wars", "bedwars", "new map", "NBFN", "map design", "island design"],
       "responses": [
-        "Exciting news! We have officially confirmed the development of our new Bed Wars map: NBFN | BED WARS! Stay tuned for updates on its release and how to play it on our community channels and blog!",
-        "Yes, our new Fortnite Bed Wars map, NBFN | BED WARS, is in development! Get ready for a fresh, fun experience. We'll announce more details soon!"
+        "Exciting news! We have officially confirmed the development of our new Bed Wars map: NBFN | BED WARS! This map features stunning floating islands with a futuristic, arcade-like design, vibrant neon colors like purple, blue, green, and yellow, and sleek, blocky platforms.",
+        "Our NBFN | BED WARS map is designed with glowing edges, hexagonal tiles, and pyramid-like resource stations for brick, metal, and coins that shift colors as you progress. Get ready to battle in a truly unique, cosmic environment!",
+        "Yes, the NBFN | BED WARS map is coming! It's built with glowing neon lights, clean tech aesthetics on floating platforms, and resource stations that indicate progression. It's going to be a visually stunning and strategic experience!"
       ]
     },
     "support": {
