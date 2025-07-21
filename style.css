@@ -28,9 +28,9 @@
     --z-background: -1;
     --z-content: 1;
     --z-header: 10;
-    --z-banner-image: 1; /* Z-index for the animated banner itself */
-    --z-banner-overlay: 2; /* Z-index for overlays on the banner */
-    --z-banner-content: 3; /* Z-index for text/buttons over the banner */
+    --z-banner-image: 1;
+    --z-banner-overlay: 2;
+    --z-banner-content: 3;
 }
 
 * {
@@ -43,7 +43,7 @@ html {
     scroll-behavior: smooth;
 }
 
-/* --- GLOBAL BODY BACKGROUND (unchanged) --- */
+/* --- BODY BACKGROUND --- */
 body {
     font-family: 'Rajdhani', sans-serif;
     background:
@@ -55,26 +55,25 @@ body {
         linear-gradient(135deg, var(--color-bg-dark) 0%, #101017 100%);
     
     background-size: 
-        50px 50px, /* Grid 1 size */
-        50px 50px, /* Grid 2 size */
-        200px 200px, /* Circuit pattern size */
-        cover, cover, /* Radial gradients cover */
-        cover; /* Main gradient covers */
+        50px 50px,
+        50px 50px,
+        200px 200px,
+        cover, cover,
+        cover;
 
     background-position:
-        0 0, /* Grid 1 initial position */
-        0 0, /* Grid 2 initial position */
-        0 0, /* Circuit initial position */
-        center center, /* Radial 1 initial position */
-        center center, /* Radial 2 initial position */
-        center center; /* Main gradient initial position */
+        0 0,
+        0 0,
+        0 0,
+        center center,
+        center center,
+        center center;
 
-    background-attachment: fixed; /* Keep background fixed while scrolling */
-
+    background-attachment: fixed;
     animation: 
-        moveGridSmall 15s linear infinite,   /* Faster movement for grid layers */
-        moveGridLarge 30s linear infinite,   /* Slower movement for circuit layer */
-        shiftHaze 40s ease-in-out infinite alternate; /* Slow, pulsating shift for haze */
+        moveGridSmall 15s linear infinite,
+        moveGridLarge 30s linear infinite,
+        shiftHaze 40s ease-in-out infinite alternate;
 
     color: var(--color-text-light);
     line-height: 1.6;
@@ -84,7 +83,7 @@ body {
     overflow-x: hidden;
 }
 
-/* --- GLOBAL BACKGROUND ANIMATIONS (unchanged) --- */
+/* --- BACKGROUND ANIMATIONS --- */
 @keyframes moveGridSmall {
     from { background-position: 0 0, 0 0, 0 0, center center, center center, center center; }
     to { background-position: 50px 50px, -50px 50px, 0 0, center center, center center, center center; }
@@ -98,15 +97,15 @@ body {
 @keyframes shiftHaze {
     0% {
         background-position: 
-            0 0, 0 0, 0 0, /* Grids & Circuit */
-            10% 20%, 90% 80%, /* Radial Haze 1, Radial Haze 2 */
-            center center; /* Base */
+            0 0, 0 0, 0 0,
+            10% 20%, 90% 80%,
+            center center;
     }
     100% {
         background-position: 
-            0 0, 0 0, 0 0, /* Grids & Circuit */
-            15% 25%, 85% 75%, /* Shift Radial Haze */
-            center center; /* Base */
+            0 0, 0 0, 0 0,
+            15% 25%, 85% 75%,
+            center center;
     }
 }
 
@@ -460,25 +459,20 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: var(--z-banner-image); /* Lower Z-index than content */
+    z-index: var(--z-banner-image);
     
-    /* MULTIPLE ANIMATED BACKGROUND LAYERS */
     background: 
-        /* Layer 1: Fastest moving vertical streaks (blue-cyan) */
         linear-gradient(to bottom, rgba(45, 188, 231, 0.05), rgba(119, 251, 244, 0.05)),
         repeating-linear-gradient(90deg, 
             transparent 0%, transparent 1px, 
             rgba(119, 251, 244, 0.05) 1px, rgba(119, 251, 244, 0.05) 2px, 
             transparent 2px, transparent 15px),
-        /* Layer 2: Medium speed diagonal grid (purple-blue) */
         repeating-linear-gradient(45deg, 
             transparent 0%, transparent 1px, 
             rgba(177, 95, 202, 0.05) 1px, rgba(177, 95, 202, 0.05) 2px, 
             transparent 2px, transparent 30px),
-        /* Layer 3: Slowest moving large dots/circles (subtle accent glow) */
         radial-gradient(circle at 20% 80%, rgba(119, 251, 244, 0.03) 0%, transparent 20%),
         radial-gradient(circle at 80% 20%, rgba(177, 95, 202, 0.03) 0%, transparent 20%),
-        /* Layer 4: Base dark, almost black background */
         linear-gradient(135deg, rgba(20, 20, 30, 1) 0%, rgba(10, 10, 15, 1) 100%);
 
     background-size: 
@@ -495,38 +489,38 @@ body {
         0% 0%, 0% 0%, /* Radial gradients */
         center center; /* Base */
 
-    background-attachment: fixed; /* Ensures animation moves regardless of scroll */
+    background-attachment: fixed;
 
     animation: 
-        animateBannerLayer1 10s linear infinite,   /* Fast vertical streaks */
-        animateBannerLayer2 20s linear infinite,   /* Medium grid scroll */
-        animateBannerLayer3 40s linear infinite,   /* Slow grid scroll */
-        animateBannerLayer4 60s ease-in-out infinite alternate; /* Haze shift */
+        animateBannerLayer1 10s linear infinite,
+        animateBannerLayer2 20s linear infinite,
+        animateBannerLayer3 40s linear infinite,
+        animateBannerLayer4 60s ease-in-out infinite alternate;
 }
 
 /* NEW: Keyframes for Banner Background Animation */
 @keyframes animateBannerLayer1 {
     from { background-position: 0 0, 0 0, 0 0, 0% 0%, 0% 0%, center center; }
-    to   { background-position: 0 500px, 0 0, 0 0, 0% 0%, 0% 0%, center center; } /* Scrolls streaks downwards */
+    to   { background-position: 0 500px, 0 0, 0 0, 0% 0%, 0% 0%, center center; }
 }
 
 @keyframes animateBannerLayer2 {
     from { background-position: 0 0, 0 0, 0 0, 0% 0%, 0% 0%, center center; }
-    to   { background-position: 0 0, 30px 30px, 0 0, 0% 0%, 0% 0%, center center; } /* Scrolls grid 1 */
+    to   { background-position: 0 0, 30px 30px, 0 0, 0% 0%, 0% 0%, center center; }
 }
 
 @keyframes animateBannerLayer3 {
     from { background-position: 0 0, 0 0, 0 0, 0% 0%, 0% 0%, center center; }
-    to   { background-position: 0 0, 0 0, 60px 60px, 0% 0%, 0% 0%, center center; } /* Scrolls grid 2 */
+    to   { background-position: 0 0, 0 0, 60px 60px, 0% 0%, 0% 0%, center center; }
 }
 
 @keyframes animateBannerLayer4 {
     0% { background-position: 0 0, 0 0, 0 0, 20% 80%, 80% 20%, center center; }
-    100% { background-position: 0 0, 0 0, 0 0, 25% 85%, 75% 25%, center center; } /* Shifts radial glows */
+    100% { background-position: 0 0, 0 0, 0 0, 25% 85%, 75% 25%, center center; }
 }
 
 
-/* Overlay for the hero banner image (on top of the animated background, behind text) */
+/* Overlay for the hero banner image */
 .hero-banner-image::after {
     content: '';
     position: absolute;
@@ -538,15 +532,15 @@ body {
     background-image:
         linear-gradient(to right, rgba(119, 251, 244, 0.1) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(119, 251, 244, 0.1) 1px, transparent 1px);
-    background-size: 50px 50px; /* Adjust grid size */
+    background-size: 50px 50px;
     opacity: 1;
-    z-index: var(--z-banner-overlay); /* On top of the animated layers */
+    z-index: var(--z-banner-overlay);
 }
 
 /* Ensure content and video are above the banner image and its overlay */
 .hero-content-container {
     position: relative;
-    z-index: var(--z-banner-content); /* Bring content above banner layers */
+    z-index: var(--z-banner-content);
     padding-top: var(--spacing-lg);
     padding-bottom: var(--spacing-lg);
     display: flex;
@@ -628,9 +622,11 @@ body {
     margin-bottom: var(--spacing-md);
 }
 
-.guide-card {
+.guide-card, .blog-post-card { /* Combined for common styles */
     padding: var(--spacing-sm);
     text-align: center;
+    display: flex; /* Enable flex for vertical content alignment */
+    flex-direction: column;
 }
 
 .guide-icon {
@@ -640,17 +636,88 @@ body {
     text-shadow: 0 0 10px var(--color-accent-cyan), 0 0 20px var(--color-accent-blue);
 }
 
-.guide-card h3 {
+.guide-card h3, .blog-post-card h3 {
     font-family: 'Orbitron', sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: var(--spacing-xs);
+    flex-shrink: 0; /* Prevent from shrinking */
 }
 
-.guide-card p {
+.guide-card p, .blog-post-card p {
     color: var(--color-text-muted);
     margin-bottom: var(--spacing-xs);
 }
+
+.guide-card .short-description,
+.blog-post-card .short-description {
+    /* Styles for the visible part of the content */
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-xs);
+    flex-grow: 1; /* Allow short description to take available space */
+}
+
+.expandable-content {
+    max-height: 0; /* Hidden by default */
+    overflow: hidden;
+    transition: max-height 0.7s ease-out, opacity 0.5s ease-out; /* Smooth expansion */
+    opacity: 0;
+    color: var(--color-text-muted);
+    text-align: left; /* Align text within expanded content */
+    margin-top: var(--spacing-xs); /* Space above expanded content */
+    line-height: 1.7;
+    padding-bottom: 0; /* Reset for transition */
+}
+
+.expandable-content.is-expanded {
+    max-height: 500px; /* Adjust as needed; needs to be larger than actual content for transition */
+    opacity: 1;
+    padding-bottom: var(--spacing-xs); /* Add back some padding when expanded */
+}
+
+.expandable-content ul {
+    list-style: disc inside;
+    margin: var(--spacing-xs) 0;
+    padding-left: var(--spacing-sm);
+}
+
+.expandable-content ul li {
+    margin-bottom: 5px;
+}
+
+.read-more-toggle {
+    margin-top: auto; /* Push button to the bottom of the card */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--color-accent-cyan);
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    transition: color 0.3s ease, transform 0.3s ease;
+    flex-shrink: 0; /* Prevent button from shrinking */
+}
+
+.read-more-toggle:hover {
+    color: white;
+    transform: translateY(-2px);
+    text-shadow: 0 0 10px var(--color-accent-cyan);
+}
+
+.read-more-toggle i {
+    transition: transform 0.3s ease;
+}
+
+.read-more-toggle.is-expanded i {
+    transform: rotate(180deg); /* Rotate arrow when expanded */
+}
+
 
 .interactive-learning {
     padding: var(--spacing-md);
@@ -690,6 +757,8 @@ body {
 .fan-feature-card {
     padding: var(--spacing-sm);
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .fan-feature-card h3 {
@@ -700,6 +769,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 10px;
+    flex-shrink: 0;
 }
 
 .fan-feature-card h3 i {
@@ -710,6 +780,7 @@ body {
 .fan-feature-card p {
     color: var(--color-text-muted);
     margin-bottom: var(--spacing-xs);
+    flex-grow: 1; /* Allow short description to expand */
 }
 
 .fan-art-gallery {
@@ -718,6 +789,7 @@ body {
     flex-wrap: wrap;
     gap: 10px;
     margin-top: var(--spacing-xs);
+    flex-shrink: 0;
 }
 
 .fan-art-gallery img {
@@ -940,9 +1012,8 @@ body {
     margin-bottom: var(--spacing-md);
 }
 
-.blog-post-card {
-    padding: var(--spacing-sm);
-}
+/* Blog Post Card (common styles are with guide-card) */
+
 
 .blog-post-card h3 {
     font-family: 'Orbitron', sans-serif;
@@ -964,12 +1035,9 @@ body {
     color: var(--color-text-muted);
     font-style: italic;
     margin-bottom: var(--spacing-xs);
+    flex-shrink: 0; /* Prevent from shrinking */
 }
 
-.blog-post-card p {
-    color: var(--color-text-muted);
-    margin-bottom: var(--spacing-xs);
-}
 
 .blog-archive-btn {
     display: block;

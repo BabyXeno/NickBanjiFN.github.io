@@ -49,7 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const now = new Date().getTime();
         const distance = nextStreamDate - now;
 
-        // Calculate days, hours, minutes, seconds
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
@@ -62,9 +61,40 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Update every second
     if (countdownElement) {
         setInterval(updateCountdown, 1000);
-        updateCountdown(); // Initial call
+        updateCountdown();
     }
+
+    // --- Functionality for "Read More" and similar buttons ---
+    // Select all links that have the 'read-more-btn' class
+    const readMoreButtons = document.querySelectorAll('.read-more-btn');
+
+    readMoreButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent the default link behavior (navigating to #)
+
+            const targetUrl = this.dataset.url; // Get the URL from the data-url attribute
+
+            if (targetUrl) {
+                // Open the URL in a new tab
+                window.open(targetUrl, '_blank');
+            } else {
+                // Fallback or placeholder for a modal/popup
+                alert('Content not available yet, or link is missing! (Placeholder functionality)');
+                // If you want a modal:
+                // openModalWithContent(this.parentElement.querySelector('h3').textContent, 'Detailed content goes here...');
+            }
+        });
+    });
+
+    // Optional: Placeholder for modal/popup function (if you decide to use one)
+    /*
+    function openModalWithContent(title, content) {
+        // Implement your modal creation and display logic here
+        // E.g., create a div, append to body, populate title/content, show it.
+        console.log(`Opening modal for: ${title} with content: ${content}`);
+        alert(`Modal Content for "${title}":\n\n${content}\n\n(This is a simulated modal)`);
+    }
+    */
 });
