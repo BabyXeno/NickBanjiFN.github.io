@@ -41,8 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Countdown Timer for Next Stream (Community Section) ---
     const countdownElement = document.getElementById('nextStreamCountdown');
     // Set your next stream date/time here (Year, Month (0-11), Day, Hour, Minute, Second)
-    // Example: August 25, 2025, 8:00 PM EST (UTC-5)
-    // You'd need a more robust solution for different timezones in a real app.
     const nextStreamDate = new Date('August 25, 2025 20:00:00 GMT-0500').getTime(); 
 
     function updateCountdown() {
@@ -66,35 +64,72 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCountdown();
     }
 
-    // --- Functionality for "Read More" and similar buttons ---
-    // Select all links that have the 'read-more-btn' class
-    const readMoreButtons = document.querySelectorAll('.read-more-btn');
+    // --- NEW: Expand/Collapse Functionality for "Read More" buttons ---
+    const readMoreToggles = document.querySelectorAll('.read-more-toggle');
 
-    readMoreButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            e.preventDefault(); // Prevent the default link behavior (navigating to #)
+    readMoreToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent default link behavior (e.g., navigating to #)
 
-            const targetUrl = this.dataset.url; // Get the URL from the data-url attribute
+            // Find the parent card (guide-card or blog-post-card)
+            const parentCard = this.closest('.guide-card, .blog-post-card, .fan-feature-card');
+            if (!parentCard) return; // Should not happen if HTML structure is correct
 
-            if (targetUrl) {
-                // Open the URL in a new tab
-                window.open(targetUrl, '_blank');
+            // Find the expandable content and short description within this card
+            const expandableContent = parentCard.querySelector('.expandable-content');
+            const shortDescription = parentCard.querySelector('.short-description');
+            
+            if (!expandableContent) return; // Ensure expandable content exists
+
+            // Toggle the 'is-expanded' class
+            const isExpanded = expandableContent.classList.toggle('is-expanded');
+            this.classList.toggle('is-expanded', isExpanded); // Also toggle on the button itself for icon rotation
+
+            // Update button text and icon
+            const icon = this.querySelector('i.fas'); // Assuming FontAwesome icon
+            if (isExpanded) {
+                this.childNodes[0].nodeValue = 'Show Less '; // Change text node directly
+                if (icon) icon.className = 'fas fa-arrow-up'; // Change icon to arrow-up
+                if (shortDescription) shortDescription.style.display = 'none'; // Hide short description
             } else {
-                // Fallback or placeholder for a modal/popup
-                alert('Content not available yet, or link is missing! (Placeholder functionality)');
-                // If you want a modal:
-                // openModalWithContent(this.parentElement.querySelector('h3').textContent, 'Detailed content goes here...');
+                this.childNodes[0].nodeValue = 'Read More '; // Change text node directly
+                if (icon) icon.className = 'fas fa-arrow-down'; // Change icon to arrow-down
+                if (shortDescription) shortDescription.style.display = 'block'; // Show short description
+            }
+
+            // Scroll to the top of the expanded card to keep it in view,
+            // especially if content pushes it off-screen
+            // Using requestAnimationFrame to ensure scroll happens after expansion starts
+            if (isExpanded) {
+                requestAnimationFrame(() => {
+                    parentCard.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'nearest' // Scrolls so the element is as close to the top as possible
+                    });
+                });
             }
         });
     });
 
-    // Optional: Placeholder for modal/popup function (if you decide to use one)
-    /*
-    function openModalWithContent(title, content) {
-        // Implement your modal creation and display logic here
-        // E.g., create a div, append to body, populate title/content, show it.
-        console.log(`Opening modal for: ${title} with content: ${content}`);
-        alert(`Modal Content for "${title}":\n\n${content}\n\n(This is a simulated modal)`);
-    }
-    */
+    // --- Previous functionality for `data-url` links (if still needed for other buttons) ---
+    // If you have other .cyber-link elements (like the blog-archive-btn) that still use data-url
+    // and should redirect, keep this part.
+    // Otherwise, you can remove it if ALL cyber-links are now expand/collapse.
+    const dataUrlLinks = document.querySelectorAll('.cyber-link[data-url]');
+    dataUrlLinks.forEach(link => {
+        // Ensure this doesn't conflict with the new expand/collapse
+        // The read-more-toggle class will prevent this from being triggered on those elements
+        if (!link.classList.contains('read-more-toggle')) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetUrl = this.dataset.url;
+                if (targetUrl) {
+                    window.open(targetUrl, '_blank');
+                } else {
+                    console.warn('Link clicked but data-url is missing:', this);
+                }
+            });
+        }
+    });
+
 });
