@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const countdownElement = document.getElementById('nextStreamCountdown');
     // Set your next stream date/time here (Year, Month (0-11), Day, Hour, Minute, Second)
     // Example: October 26, 2025 8:00:00 PM EST (GMT-0500)
-    const nextStreamDate = new Date('October 26, 2025 20:00:00 GMT-0500').getTime();
+    const nextStreamDate = new Date('November 30, 2025 20:00:00 GMT-0500').getTime();
 
     function updateCountdown() {
         if (!countdownElement) return; // Exit if element doesn't exist
